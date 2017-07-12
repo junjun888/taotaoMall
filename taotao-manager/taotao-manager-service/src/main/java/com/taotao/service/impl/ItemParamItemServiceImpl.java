@@ -32,7 +32,7 @@ public class ItemParamItemServiceImpl implements ItemParamItemService{
 		// 根据商品的id 查询商品的规格参数
 		TbItemParamItemExample example = new TbItemParamItemExample();
 		Criteria criteria = example.createCriteria();
-		criteria.andCreatedEqualTo(itemId);
+		criteria.andItemIdEqualTo(itemId);
 		// 执行查询
 		List<TbItemParamItem> list = tbItemParamItemMapper.selectByExampleWithBLOBs(example);
 		
