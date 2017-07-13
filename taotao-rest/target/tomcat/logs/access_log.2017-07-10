@@ -1,2 +1,0 @@
-127.0.0.1 - - [10/Jul/2017:23:16:58 +0800] "GET /rest/itemcat/list?callback=category.getDataService HTTP/1.1" 200 31760 http-bio-8081-exec-1 1757
-127.0.0.1 - - [10/Jul/2017:23:17:20 +0800] "GET /rest/itemcat/list?callback=category.getDataService HTTP/1.1" 200 31760 http-bio-8081-exec-2 381
