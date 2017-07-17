@@ -39,19 +39,20 @@ public class ContentServiceImpl implements ContentService {
 		// 把字符串转换成taotaoresult
 		TaotaoResult taotaoResult = TaotaoResult.format(result);
 		// 取出内容列表
-		List<TbContent> list = (List<TbContent>) taotaoResult.getData();
+		@SuppressWarnings("unchecked")
+		List<Map<String, String>> list = (List<Map<String, String>>) taotaoResult.getData();
 		// 创建一个页面需要的pojo
-		List<Map> resultList = new ArrayList<>();
-		for (TbContent tbContent : list) {
-			Map map = new HashMap<>();
-			map.put("src", tbContent.getPic());
+		List<Map<String, Object>> resultList = new ArrayList<>();
+		for (Map<String, String> tbContent : list) {
+			Map<String, Object> map = new HashMap<>();
+			map.put("src", tbContent.get("pic"));
 			map.put("height", 240);
 			map.put("width", 670);
-			map.put("srcB", tbContent.getPic2());
+			map.put("srcB", tbContent.get("pic2"));
 			map.put("heightB", 240);
 			map.put("widthB", 550);
-			map.put("href", tbContent.getUrl());
-			map.put("alt", tbContent.getSubTitle());
+			map.put("href", tbContent.get("url"));
+			map.put("alt", tbContent.get("subTitle"));
 			
 			resultList.add(map);
 		}

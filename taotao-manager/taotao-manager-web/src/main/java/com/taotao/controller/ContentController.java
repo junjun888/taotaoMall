@@ -17,6 +17,7 @@ import com.taotao.service.ContentService;
  * @date	2017年7月13日下午8:41:30
  * @version 1.0
  */
+@RequestMapping("/content")
 @Controller
 public class ContentController {
 

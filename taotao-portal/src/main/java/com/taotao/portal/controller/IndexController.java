@@ -16,7 +16,7 @@ public class IndexController {
 	@RequestMapping("/index")
 	public String showIndex(Model model) {
 		String adJson = contentService.getContentList();
-		model.addAttribute(adJson);
+		model.addAttribute("ad1", adJson);
 		
 		return "index";
 	}

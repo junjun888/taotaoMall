@@ -39,7 +39,7 @@ public class ContentServiceImpl implements ContentService {
 		tbContent.setUpdated(new Date());
 		contentMapper.insert(tbContent);
 		
-		return null;
+		return TaotaoResult.ok();
 	}
 
 }
