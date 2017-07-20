@@ -69,6 +69,7 @@ public class testJedis {
 	@Test
 	public void testSpringJedisCluster() {
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:spring/application-*.xml");
+		System.out.println(applicationContext == null);
 		JedisCluster jedisCluster = (JedisCluster) applicationContext.getBean("redisClient");
 		jedisCluster.set("jedisCluster", "this is a jedisCluster add value");
 		String str = jedisCluster.get("jedisCluster");
