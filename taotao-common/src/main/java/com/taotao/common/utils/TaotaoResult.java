@@ -54,10 +54,6 @@ public class TaotaoResult {
         this.data = data;
     }
 
-//    public Boolean isOK() {
-//        return this.status == 200;
-//    }
-
     public Integer getStatus() {
         return status;
     }
