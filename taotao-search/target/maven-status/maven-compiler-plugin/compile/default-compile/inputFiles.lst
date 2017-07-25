@@ -1,5 +1,11 @@
 F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\controller\ItemController.java
+F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\pojo\SearchResult.java
+F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\dao\impl\SearchDaoImpl.java
 F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\pojo\Item.java
 F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\service\impl\ItemServiceImpl.java
+F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\service\SearchService.java
 F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\mapper\ItemMapper.java
 F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\service\ItemService.java
+F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\service\impl\SearchServiceImpl.java
+F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\controller\SearchController.java
+F:\EclipseProject\template\taotao-search\src\main\java\com\taotao\search\dao\SearchDao.java
