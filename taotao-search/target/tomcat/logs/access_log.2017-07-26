@@ -1,0 +1,2 @@
+127.0.0.1 - - [26/Jul/2017:21:16:46 +0800] "GET /search/query?q=apple&page=1 HTTP/1.1" 200 2528 http-bio-8083-exec-1 1374
+127.0.0.1 - - [26/Jul/2017:21:31:29 +0800] "GET /search/query?q=%E4%B8%89%E4%B8%AA%E7%88%B8%E7%88%B8&page=1 HTTP/1.1" 200 4138 http-bio-8083-exec-3 88
