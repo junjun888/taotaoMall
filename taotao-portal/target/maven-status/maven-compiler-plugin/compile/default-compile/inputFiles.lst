@@ -3,6 +3,9 @@ F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\control
 F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\service\ContentService.java
 F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\service\SearchService.java
 F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\pojo\SearchResult.java
+F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\controller\ItemController.java
 F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\service\impl\ContentServiceImpl.java
 F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\controller\SearchController.java
 F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\pojo\Item.java
+F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\service\ItemService.java
+F:\EclipseProject\template\taotao-portal\src\main\java\com\taotao\portal\service\impl\ItemServiceImpl.java

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.taotao.portal.pojo.SearchResult;
 
 /**
  * 淘淘商城自定义响应结构
@@ -105,7 +106,7 @@ public class TaotaoResult {
             return null;
         }
     }
-
+    
     /**
      * 没有object对象的转化
      * 

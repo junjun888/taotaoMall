@@ -6,6 +6,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.taotao.common.utils.HttpClientUtil;
 import com.taotao.common.utils.TaotaoResult;
 import com.taotao.portal.pojo.SearchResult;
@@ -33,7 +35,7 @@ public class SearchServiceImpl implements SearchService {
 		params.put("q", queryString);
 		params.put("page", page + "");
 		// 调用服务
-		String json = HttpClientUtil.doGet(SEARCH_BASE_RUL, params); 
+		String json = HttpClientUtil.doGet(SEARCH_BASE_RUL, params);
 		// 把字符串转成java对象
 		TaotaoResult taotaoResult = TaotaoResult.formatToPojo(json, SearchResult.class);
 		
@@ -45,5 +47,5 @@ public class SearchServiceImpl implements SearchService {
 		
 		return null;
 	}
-
+	
 }

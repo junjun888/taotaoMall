@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.taotao.common.utils.TaotaoResult;
 import com.taotao.rest.service.ItemService;
@@ -23,7 +24,21 @@ public class ItemController {
 	@Autowired
 	private ItemService itemService;
 	
-	private TaotaoResult getItemInfo(@PathVariable Long itemId) {
+	@RequestMapping("/info/{itemId}")
+	@ResponseBody
+	private TaotaoResult getItemBaseInfo(@PathVariable Long itemId) {
 		return itemService.getItemBaseInfo(itemId);
+	}
+	
+	@RequestMapping("/desc/{itemId}")
+	@ResponseBody
+	private TaotaoResult getItemDescInfo(@PathVariable Long itemId) {
+		return itemService.getItemDesc(itemId);
+	}
+	
+	@RequestMapping("/param/{itemId}")
+	@ResponseBody
+	private TaotaoResult getItemParamInfo(@PathVariable Long itemId) {
+		return itemService.getItemParam(itemId);
 	}
 }
