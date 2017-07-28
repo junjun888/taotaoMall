@@ -1,6 +1,0 @@
-127.0.0.1 - - [27/Jul/2017:22:25:25 +0800] "GET /search/query?q=%E6%89%8B%E6%9C%BA&page=1 HTTP/1.1" 200 2983 http-bio-8083-exec-1 547
-127.0.0.1 - - [27/Jul/2017:22:25:47 +0800] "GET /search/query?q=%E6%89%8B%E6%9C%BA&page=1 HTTP/1.1" 200 2983 http-bio-8083-exec-3 40
-127.0.0.1 - - [27/Jul/2017:22:26:05 +0800] "GET /search/query?q=%E6%89%8B%E6%9C%BA&page=1 HTTP/1.1" 200 2983 http-bio-8083-exec-5 22
-127.0.0.1 - - [27/Jul/2017:22:27:33 +0800] "GET /search/query?q=%E6%89%8B%E6%9C%BA&page=1 HTTP/1.1" 200 2983 http-bio-8083-exec-7 39
-127.0.0.1 - - [27/Jul/2017:22:28:10 +0800] "GET /search/query?q=%E6%89%8B%E6%9C%BA&page=1 HTTP/1.1" 200 2983 http-bio-8083-exec-9 38
-127.0.0.1 - - [27/Jul/2017:22:28:16 +0800] "GET /search/query?q=%E6%89%8B%E6%9C%BA&page=1 HTTP/1.1" 200 2983 http-bio-8083-exec-1 16

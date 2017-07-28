@@ -6,7 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.taotao.common.utils.HttpClientUtil;
 import com.taotao.common.utils.TaotaoResult;
-import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbItemDesc;
+import com.taotao.portal.pojo.ItemInfo;
 import com.taotao.portal.service.ItemService;
 
 /**
@@ -20,21 +21,27 @@ import com.taotao.portal.service.ItemService;
 @Service
 public class ItemServiceImpl implements ItemService {
 	
-	@Value("{REST_BASE_URL}")
+	@Value("${REST_BASE_URL}")
 	private String REST_BASE_URL;
 	
-	@Value("{ITEM_INFO_URL}")
+	@Value("${ITEM_INFO_URL}")
 	private String ITEM_INFO_URL;
+	
+	@Value("${ITEM_DESC_URL}")
+	private String ITEM_DESC_URL;
 
+	@Value("${ITEM_PARAM_URL}")
+	private String ITEM_PARAM_URL;
+	
 	@Override
-	public TbItem getItemById(Long itemId) {
+	public ItemInfo getItemById(Long itemId) {
 		try {
 			// 调用 rest 服务 查询基本信息
 			String json = HttpClientUtil.doGet(REST_BASE_URL + ITEM_INFO_URL + itemId);
 			if (!StringUtils.isBlank(json)) {
-				TaotaoResult taotaoResult = TaotaoResult.formatToPojo(json, TbItem.class);
+				TaotaoResult taotaoResult = TaotaoResult.formatToPojo(json, ItemInfo.class);
 				if (taotaoResult.getStatus() == 200) {
-					TbItem item = (TbItem) taotaoResult.getData();
+					ItemInfo item = (ItemInfo) taotaoResult.getData();
 					
 					return item;
 				}
@@ -42,6 +49,30 @@ public class ItemServiceImpl implements ItemService {
 		} catch (Exception e) {
 			return null;
 		}
+		return null;
+	}
+
+	@Override
+	public String getItemDescById(Long itemId) {
+		try {
+			String json = HttpClientUtil.doGet(REST_BASE_URL + ITEM_DESC_URL + itemId);
+			// 转换成 java 对象
+			TaotaoResult taotaoResult = TaotaoResult .formatToPojo(json, TbItemDesc.class);
+			
+			if (taotaoResult.getStatus() == 200) {
+				TbItemDesc itemDesc = (TbItemDesc) taotaoResult.getData();
+				
+				return itemDesc.getItemDesc();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public String getItemParam(Long itemId) {
+		// TODO
 		return null;
 	}
 	
