@@ -7,6 +7,7 @@ import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.taotao.common.utils.ExceptionUtil;
@@ -80,7 +81,7 @@ public class UserController {
 	/**
 	 * 创建用户
 	 */
-	@RequestMapping("/register")
+	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public TaotaoResult createUser(TbUser user) {
 		try {
 			TaotaoResult result = uservice.createUser(user);
@@ -91,5 +92,40 @@ public class UserController {
 		}
 	}
 	
+	/**
+	 * 用户登录
+	 */
+	@RequestMapping(value="/login", method=)
+	@ResponseBody
+	public TaotaoResult userLogin(String userName, String password) {
+		try {
+			TaotaoResult result = uservice.userLogin(userName, password);
+			
+			return result;
+		} catch (Exception e) {
+			return TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
+		}
+	}
 	
+	@RequestMapping("/token/{token}")
+	public TaotaoResult getUserByToken(@PathVariable String token, String callback) {
+		TaotaoResult taotaoResult;
+		
+		try {
+			taotaoResult = uservice.getUserByToken(token);
+		} catch (Exception e) {
+			taotaoResult = TaotaoResult.build(500, ExceptionUtil.getStackTrace(e));
+		}
+		
+		//判断是否是 jsonp 所调用
+		if (StringUtils.isBlank(callback)) {
+			return taotaoResult;
+		} else {
+			// 代表是 jsonp 所调用
+			MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(taotaoResult);
+			mappingJacksonValue.setJsonpFunction(callback);
+			
+			return mappingJacksonValue;
+		}
+	}
 }

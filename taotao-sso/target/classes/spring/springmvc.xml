@@ -16,4 +16,9 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!-- 资源映射  因为静态资源都放在 WEB-INF 中无法访问到，所以要做资源映射  web.xml 中配置 /-->
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
+	<mvc:resources location="/WEB-INF/images/" mapping="/images/**"/>
+	
 </beans>
