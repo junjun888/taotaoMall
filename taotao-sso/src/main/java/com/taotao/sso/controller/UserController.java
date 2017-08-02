@@ -1,5 +1,10 @@
 package com.taotao.sso.controller;
 
+import java.awt.PageAttributes.MediaType;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.executor.ReuseExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +29,7 @@ import com.taotao.sso.service.UserService;
  * @version 1.0
  */
 @Controller
+@RequestMapping("/user")
 public class UserController {
 	
 	@Autowired
@@ -43,7 +49,7 @@ public class UserController {
 			result = TaotaoResult.build(400, "校验类型不为空");
 		}
 		
-		if (type != 1 || type !=2 || type != 3) {
+		if (type != 1 && type !=2 && type != 3) {
 			result = TaotaoResult.build(500, "校验类型错误");
 		}
 		
@@ -95,11 +101,13 @@ public class UserController {
 	/**
 	 * 用户登录
 	 */
-	@RequestMapping(value="/login", method=)
+	@RequestMapping(value="/login")
 	@ResponseBody
-	public TaotaoResult userLogin(String userName, String password) {
+	public TaotaoResult userLogin(String username, String password,
+			HttpServletRequest request, HttpServletResponse response) {
+		
 		try {
-			TaotaoResult result = uservice.userLogin(userName, password);
+			TaotaoResult result = uservice.userLogin(username, password, request, response);
 			
 			return result;
 		} catch (Exception e) {
@@ -108,7 +116,7 @@ public class UserController {
 	}
 	
 	@RequestMapping("/token/{token}")
-	public TaotaoResult getUserByToken(@PathVariable String token, String callback) {
+	public Object getUserByToken(@PathVariable String token, String callback) {
 		TaotaoResult taotaoResult;
 		
 		try {
